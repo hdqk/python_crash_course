@@ -1,0 +1,16 @@
+locations = ['bali', 'italy', 'argentina', 'finland', 'norway', 'iceland']
+
+print(f"Original order:\n{locations}\n")
+print(f"Sorted order:\n{sorted(locations)}\n")
+print(f"Checking if original order is intact:\n{locations}\n")
+print(f"Reverse sorted order:\n{sorted(locations, reverse=True)}\n")
+print(f"Checking if original order is intact:\n{locations}\n")
+locations.reverse()
+print(f"Reverse order:\n{locations}\n")
+print(f"Checking if original order is intact:\n{locations}\n")
+locations.reverse()
+print(f"Restored order:\n{locations}\n")
+locations.sort()
+print(f"Alphabetical order:\n{locations}\n")
+locations.sort(reverse=True)
+print(f"Reverse alphabetical order:\n{locations}\n")

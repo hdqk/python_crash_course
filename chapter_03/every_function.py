@@ -1,0 +1,17 @@
+languages = ['finnish', 'swahili', 'russian']
+print(languages)
+languages.append('english')
+print(languages)
+print(f"The last item in the list is {languages[-1].title()}")
+languages.insert(0, 'spanish')
+print(languages)
+del languages[1]
+print(languages)
+languages.remove('spanish')
+print(languages)
+popped_language = languages.pop(0)
+print(languages)
+print(f"The popped language is {popped_language}")
+languages.sort()
+print(languages)
+print(len(languages))

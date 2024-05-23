@@ -1,0 +1,3 @@
+In Python you can ask for user input.
+In Python you can work with large amounts of data quickly.
+In Python you can work with and edit files.
