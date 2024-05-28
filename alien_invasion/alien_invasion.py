@@ -24,12 +24,11 @@ class AlienInvasion:
     def run_game(self):
         """Start the main loop for the game."""
         while True:
-            self._check_events()
-            self.ship.update()
-            self.bullets.update()
-            self._delete_old_bullets()
-            self._update_screen()
-            self.clock.tick(60)
+            self._check_events()  # check for player input
+            self.ship.update()  # update position of the ship
+            self._update_bullets()  # update position of bullets
+            self._update_screen()  # refresh screen
+            self.clock.tick(60)  # sets refresh rate
 
     def _check_events(self):
         """Respond to keypresses and mouse events."""
@@ -61,8 +60,19 @@ class AlienInvasion:
 
     def _fire_bullet(self):
         """Create a new bullet and add it to the bullets group."""
-        new_bullet = Bullet(self)
-        self.bullets.add(new_bullet)
+        if len(self.bullets) < self.settings.bullet_limit:
+            new_bullet = Bullet(self)
+            self.bullets.add(new_bullet)
+
+    def _update_bullets(self):
+        """Update position of bullets and get rid of old bullets."""
+        # Update bullet positions.
+        self.bullets.update()
+        # Get rid of bullets that have disappeared off the screen.
+        for bullet in self.bullets.copy():
+            if bullet.rect.bottom <= 0:
+                self.bullets.remove(bullet)
+        # print(len(self.bullets)) #Shows that the bullets are being deleted
 
     def _update_screen(self):
         """Update images on the screen and flip to the new screen."""
@@ -71,13 +81,6 @@ class AlienInvasion:
             bullet.draw_bullet()
         self.ship.blitme()
         pygame.display.flip()
-
-    def _delete_old_bullets(self):
-        """Get rid of bullets that have disappeared off the screen."""
-        for bullet in self.bullets.copy():
-            if bullet.rect.bottom <= 0:
-                self.bullets.remove(bullet)
-        # print(len(self.bullets)) #Shows that the bullets are being deleted
 
 
 if __name__ == '__main__':
