@@ -1,9 +1,9 @@
 Chapter 11 of Python Crash Course (3rd Edition) by Eric Matthes
 
 title:  
-Testing Your Code
+Testing Your Code  
 
 topics:  
-Installing pytest with pip
-Testing a Function
-Testing a Class
+Installing pytest with pip  
+Testing a Function  
+Testing a Class  
