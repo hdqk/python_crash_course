@@ -30,6 +30,7 @@ class AlienInvasion:
             self._check_events()  # check for player input
             self.ship.update()  # update position of the ship
             self._update_bullets()  # update position of bullets
+            self._update_aliens()  # update the position of aliens
             self._update_screen()  # refresh screen
             self.clock.tick(60)  # sets refresh rate
 
@@ -76,6 +77,10 @@ class AlienInvasion:
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
         # print(len(self.bullets)) #Shows that the bullets are being deleted
+
+    def _update_aliens(self):
+        """Update the positions of all aliens in the fleet."""
+        self.aliens.update()
 
     def _create_fleet(self):
         """Create the fleet of aliens."""
