@@ -5,7 +5,7 @@ from pygame.sprite import Sprite
 
 
 class Drop(Sprite):
-    """A class to represent a single aline in the fleet."""
+    """A class to represent a single drop."""
 
     def __init__(self, rain_drops):
         """Initialize the drop and set its starting position."""
