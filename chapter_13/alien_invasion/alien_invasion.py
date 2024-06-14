@@ -42,7 +42,6 @@ class AlienInvasion:
 
             self._update_screen()  # refresh screen
             self.clock.tick(60)  # sets refresh rate
-            print(f"Ships left: {self.stats.ships_left}")
 
     def _check_events(self):
         """Respond to keypresses and mouse events."""
