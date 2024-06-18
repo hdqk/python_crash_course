@@ -82,6 +82,7 @@ class AlienInvasion:
         if self.play_button.rect.collidepoint(mouse_pos) and not self.game_active:
             # Reset the game statistics.
             self.stats.reset_stats()
+            self.settings.initialize_dynamic_settings()
             self.game_active = True
             # Get rid of any remaining bullets and aliens.
             self.bullets.empty()
