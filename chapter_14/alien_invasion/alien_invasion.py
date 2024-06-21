@@ -85,6 +85,7 @@ class AlienInvasion:
             # Reset the game statistics.
             self.stats.reset_stats()
             self.sb.prep_score()
+            self.sb.prep_level()
             self.settings.initialize_dynamic_settings()
             self.game_active = True
             # Get rid of any remaining bullets and aliens.
@@ -129,7 +130,10 @@ class AlienInvasion:
             # Destroy existing bullets and create a new fleet.
             self.bullets.empty()
             self._create_fleet()
+            # Increase level
             self.settings.increase_speed()
+            self.stats.level += 1
+            self.sb.prep_level()
 
     def _update_aliens(self):
         """Update the positions of all aliens in the fleet."""
@@ -211,12 +215,12 @@ class AlienInvasion:
     def _update_screen(self):
         """Update images on the screen and flip to the new screen."""
         self.screen.fill(self.settings.bg_color)
+        # Draw the score information.
+        self.sb.show_score()
         for bullet in self.bullets.sprites():
             bullet.draw_bullet()
         self.ship.blitme()
         self.aliens.draw(self.screen)
-        # Draw the score information.
-        self.sb.show_score()
         # Draw the Play button if the game is inactive.
         if not self.game_active:
             self.play_button.draw_button()
