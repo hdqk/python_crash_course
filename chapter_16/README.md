@@ -2,7 +2,7 @@
 
 ## Title: Downloading Data  
 
-## Topics:  
+### Topics:  
 * The CSV File Format  
   - Parsing the CSV File Headers  
   - Printing the Headers and Their Positions  
