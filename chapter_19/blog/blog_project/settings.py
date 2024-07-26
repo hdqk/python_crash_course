@@ -27,12 +27,16 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+# My settings
+LOGIN_REDIRECT_URL = 'blogs:index'
+LOGOUT_REDIRECT_URL = 'blogs:index'
 
 # Application definition
 
 INSTALLED_APPS = [
     # My apps
     "blogs",
+    "accounts",
     # Default django apps
     "django.contrib.admin",
     "django.contrib.auth",
