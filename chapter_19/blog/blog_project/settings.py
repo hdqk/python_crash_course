@@ -28,8 +28,9 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # My settings
-LOGIN_REDIRECT_URL = 'blogs:index'
-LOGOUT_REDIRECT_URL = 'blogs:index'
+LOGIN_REDIRECT_URL = "blogs:index"
+LOGOUT_REDIRECT_URL = "blogs:index"
+LOGIN_URL = "accounts:login"
 
 # Application definition
 
