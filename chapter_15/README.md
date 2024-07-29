@@ -2,7 +2,7 @@
 
 ## Title: Generating Data  
 
-## Topics:  
+### Topics:  
 * Installing Matplotlib  
 * Plotting a Simple Line Graph  
   - Changing the Label Type and Line Thickness  
