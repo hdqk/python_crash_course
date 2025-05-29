@@ -1,6 +1,6 @@
 def show_messages(texts):
-    """prints each text message in a list"""
-    for message in messages:
+    """Print each text message in a list."""
+    for message in texts:
         print(message)
 
 
